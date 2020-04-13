@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="public/css/navbar.css">
+    <script src="public/javaScript/Classes/Address.js"></script>
+    <script src="public/javaScript/Classes/Restaurant.js"></script>
+    <script src="public/javaScript/Classes/Reservation.js"></script>
+    <script src="public/javaScript/Functions/login.js"></script>
+
+
+</head>
+<body onload="dynamicNavBar();">
+
+<!-- Navbar -->
+<ul>
+    <li><a href="homePage.html">Home</a></li>
+    <li id="reserve"><a href="reserve.html">Reservér</a></li>
+    <li id="myRes"><a href="reservations.html">Mine reservationer</a></li>
+    <li id="admin"><a href="adminPage.html">Mine restauranter</a></li>
+    <li id="login"><a href="login.html">Login</a></li>
+    <li id="create"><a href="newUser.html">Opret bruger</a></li>
+    <li id="logout" onclick="logout()">Logout</li>
+</ul>
+
+<h3>Dine restauranter:</h3>
+<div id="adminRestaurants"></div>
+<h3>Opret restaurant:</h3>
+<div id="createRestaurant">
+    <form>
+        <input type="text" id="name"  placeholder="Restaurant navn">
+        <br>
+        <input type="text" id="streetName" placeholder="Vejnavn">
+        <br>
+        <input type="text" id="streetNumber" placeholder="Vejnummer">
+        <br>
+        <input type="text" id="zipCode" placeholder="Postnummer">
+        <br>
+        <input type="text" id="city" placeholder="By">
+        <br>
+        <input type="text" id="country" placeholder="Land">
+        <br>
+        <textarea id="description" placeholder="Beskrivelse af restaurant"></textarea>
+        <br>
+        <input type="button" onclick="storeRestaurant()" value="Opret restaurant">
+    </form>
+</div>
+<br>
+</body>
+
+
+<script src="public/javaScript/Functions/buildTable.js"></script>
+<script src="public/javaScript/Functions/createRestaurant.js"></script>
+<script src="public/javaScript/Functions/storeRestaurants.js"></script>
+</html>

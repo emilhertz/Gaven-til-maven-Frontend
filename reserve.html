@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="public/css/navbar.css">
+    <title>Reserver</title>
+    <script src="public/javaScript/Classes/User.js"></script>
+    <script src="public/javaScript/Classes/Address.js"></script>
+    <script src="public/javaScript/Classes/Restaurant.js"></script>
+    <script src="public/javaScript/Classes/Reservation.js"></script>
+    <script src="public/javaScript/Functions/login.js"></script>
+
+</head>
+<body onload="dynamicNavBar(); ">
+
+<!-- Navbar -->
+<ul>
+    <li><a href="homePage.html">Home</a></li>
+    <li id="reserve"><a href="reserve.html">Reservér</a></li>
+    <li id="myRes"><a href="reservations.html">Mine reservationer</a></li>
+    <li id="admin"><a href="adminPage.html">Mine restauranter</a></li>
+    <li id="login"><a href="login.html">Login</a></li>
+    <li id="create"><a href="newUser.html">Opret bruger</a></li>
+    <li id="logout" onclick="logout()">Logout</li>
+</ul>
+
+<h1>Restauranter</h1>
+<div id="restaurants"></div>
+<div id="bookingForm"></div>
+
+</body>
+
+<script src="public/javaScript/Functions/buildTable.js"></script>
+<script src="public/javaScript/Functions/booking.js"></script>
+<script src="public/javaScript/Functions/showAllRestaurants.js"></script>
+
+</html>
