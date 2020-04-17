@@ -1,4 +1,5 @@
-// Hele storeRestaurant
+//Hele storeRestaurant
+//Behøves dette at være en funktion?
 async function storeRestaurant() {
     //Navigating to inputs and saving them to variables
     const restaurantName = document.getElementById("name");

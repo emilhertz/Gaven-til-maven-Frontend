@@ -1,6 +1,6 @@
-    showRestaurant = async() =>{
-  //Defining request options
-  const options = {
+showRestaurant = async() =>{
+    //Defining request options
+    const options = {
     method: "GET"
   };
 
