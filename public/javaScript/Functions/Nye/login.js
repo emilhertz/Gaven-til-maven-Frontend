@@ -1,6 +1,6 @@
 //login metode
 let login = () => {
-    //We are using the DOM to retrieve the values from our text-input ind login.html.
+    //We are using the DOM to retrieve the values from our text-input in login.html.
     let username = document.getElementById("loginUsername");
     let password = document.getElementById("loginPassword");
 
@@ -15,6 +15,7 @@ let login = () => {
         .then((response) => {
             //If the API accepts the login-credentials, we receive the status-code 200
             if (response.status === 200) {
+                //behøves denne?
                 console.log(response);
                 //Saves JWT as cookie
                 document.cookie = `token=${response.data.token}`;
