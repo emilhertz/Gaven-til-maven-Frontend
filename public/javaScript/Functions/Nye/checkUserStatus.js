@@ -4,15 +4,18 @@ let check = () => {
     //retrieves jwt
     let token = Cookies.get("token");
 
+    //defining headers
+    let headers = {headers: {'Authorization': token}};
+
     //Makes request to API
-    axios.get('http://localhost:4000/check', {auth: token})
+    axios.get('http://localhost:4000/check', headers)
     .then((response) => {
         //logic
-        console.log('sker noget');
-        console.log(response);
+
     })
     //prodcedure if either API is not reachable or Auth failed
     .catch(() => {
-        console.log('Auth failed');
+        alert('Auth failed');
+        document.open("homePage.html", "self");
     })
 };
