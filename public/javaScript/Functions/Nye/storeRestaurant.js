@@ -22,12 +22,16 @@ async function storeRestaurant() {
         description: description.value
     };
 
+    //new post request
+    //Contains the object "body" from above as body.
+    //The cookie saved with the key "token" is added to header.authorization
+    //written in axios syntax
     axios.post('http://localhost:4000/restaurant/create', body, {headers:{"authorization":`${Cookies.get("token")}`}})
         .then((response) => {
-            console.log(response)
+            alert(response.data.message)
         })
         //Procedure if API is not reachable
         .catch((err) => {
-            alert('Auth failed')
+            alert("Oprettelse af restaurant fejlede")
         })
 }
