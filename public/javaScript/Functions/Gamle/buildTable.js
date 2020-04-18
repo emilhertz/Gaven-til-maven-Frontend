@@ -1,12 +1,3 @@
-//example restaurant initialized
-let res1 = new Restaurant(1,"noma", new Address(1, "Refshalevej", 96,1432,"København K", "Danmark"), [],10,[],"Fin restaurant:)");
-let res2 = new Restaurant(2, "Geranium", new Address(2, "Per Henrik Lings Allé", 4, 2100, "København", "Danmark"),[],20,[],"Også en fin restaurant:)");
-let res3 = new Restaurant(3,"Sheik Shawarma Halal", new Address(3, "Nørrebrogade", 98, 2200,"København", "Danmark"),[],30,[],"MEGET fin restaurant:)");
-
-//Pushing the example restaurants to
-let listOfRestaurants = [res1.tablePrepBooking(), res2.tablePrepBooking(), res3.tablePrepBooking()];
-
-
 // Table borrowed from eloquent javaScript - Overview of the restaurants.
 
 //function which creates a html-table in which restaturants are displayed

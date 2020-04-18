@@ -16,7 +16,6 @@ let login = () => {
             //If the API accepts the login-credentials, we receive the status-code 200
             if (response.status === 200) {
                 //behøves denne?
-                console.log(response);
                 //Saves JWT as cookie
                 document.cookie = `token=${response.data.token}`;
                 alert(response.data.message);
