@@ -7,7 +7,7 @@ async function storeUser() {
     const email = document.getElementById("email");
 
     //Defining req.body content
-    const data = {
+    const body = {
         firstName: firstName.value,
         lastName: lastName.value,
         username: username.value,
@@ -16,24 +16,22 @@ async function storeUser() {
         isAdmin: false
     };
 
-    //Defining request options
-    const options = {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-    };
+      axios.post('http://localhost:4000/user/create', body)
+          .then(response => {
+              console.log(response);
+// 201 = Status code for object created.
+              if(response.status === 201){
+                  alert("Bruger oprettet!");
+                  //Procedure if no error
+                  window.open("login.html", "_self");
+          }})
+          .catch(err => {
+          alert(`Kunne ikke oprette bruger, følgende fejl forårsaget det: ${err.response.data.errors}`);
 
-    //Request that saves respond in variable
-    const res = await fetch('http://localhost:4000/user/create', options)
-        //Procedure if no error
-        .then((response)=>{return response.json()})
-        //Procedure if fetch error (e.g. API not reachable)
-        .catch((e)=>{return console.log(e)});
+      });
 
-    if(res.created === true){
-        alert("Bruger oprettet!");
-        window.open("login.html", "_self");
-    } else {
-        alert(`${res.errors}`);
-    }
-}
+};
+
+
+
+
