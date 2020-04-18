@@ -1,6 +1,5 @@
 axios.get('http://localhost:4000/restaurant/admin', {headers:{"authorization":`${Cookies.get("token")}`}})
     .then(response => {
-        console.log(response.data.restaurants);
         let restaurants = response.data.restaurants.map(restaurant =>{
            return {
                Restaurant: restaurant.name,
@@ -12,7 +11,7 @@ axios.get('http://localhost:4000/restaurant/admin', {headers:{"authorization":`$
         document.getElementById("adminRestaurants").appendChild(buildTable(restaurants))
     })
     .catch(err =>{
-        return []
+        alert("Kunne ikke hente nogle restauranter")
     });
 
 //table is appended to the document
