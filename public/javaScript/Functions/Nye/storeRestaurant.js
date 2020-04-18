@@ -1,4 +1,5 @@
-// Hele storeRestaurant
+//Hele storeRestaurant
+//Behøves dette at være en funktion?
 async function storeRestaurant() {
     //Navigating to inputs and saving them to variables
     const restaurantName = document.getElementById("name");
@@ -22,12 +23,17 @@ async function storeRestaurant() {
         description: description.value
     };
 
-    axios.post('http://localhost:4000/restaurant/create', body, {headers:{"authorization":`${Cookies.get("token")}`}})
+    //new post request
+    //Contains the object "body" from above as body.
+    //The cookie saved with the key "token" is added to header.authorization
+    //written in axios syntax
+    await axios.post('http://localhost:4000/restaurant/create', body, {headers:{"authorization":`${Cookies.get("token")}`}})
         .then((response) => {
-            console.log(response)
+            alert(response.data.message);
         })
         //Procedure if API is not reachable
         .catch((err) => {
-            alert('Auth failed')
-        })
+            alert("Oprettelse af restaurant fejlede")
+        });
+    location.reload()
 }
