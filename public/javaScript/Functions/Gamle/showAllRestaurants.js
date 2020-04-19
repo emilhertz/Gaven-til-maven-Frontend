@@ -5,7 +5,6 @@ axios.get("http://localhost:4000/restaurant")
                 Navn: restaurant.name,
                 Beskrivelse: restaurant.description,
                 Addresse: `${restaurant.address.streetName} ${restaurant.address.streetNumber}, ${restaurant.address.zipCode} ${restaurant.address.city} ${restaurant.address.country}`,
-                Siddepladser: 10,
                 //same as when we used "this"
                 Book: restaurant
             }
