@@ -33,10 +33,9 @@ buildTable = objects => {
 
             } else if(key === "slet") {
                 cell = document.createElement("button");
-                //cell.setAttribute("id", object.id);
                 cell.innerHTML = key;
                 cell.onclick = ()=>{
-                    alert('Restaurant er slettet');
+                    deleteRestaurant(object.slet);
                 }
             } else if(key === "Afmeld") {
                 cell = document.createElement("button");

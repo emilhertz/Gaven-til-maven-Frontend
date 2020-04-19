@@ -5,7 +5,7 @@ axios.get('http://localhost:4000/restaurant/admin', {headers:{"authorization":`$
                Restaurant: restaurant.name,
                Addresse: `${restaurant.address.streetName} ${restaurant.address.streetNumber}, ${restaurant.address.zipCode} ${restaurant.address.city}`,
                Beskrivelse: restaurant.description,
-               slet: restaurant
+               slet: restaurant._id
            }
         });
         document.getElementById("adminRestaurants").appendChild(buildTable(restaurants))
