@@ -31,7 +31,7 @@ class Restaurant{
             Adresse: this.address.getAddress(),
             Siddepladser: this.seats,
             //This returns the current restaurant-instance
-            Rediger: this
+            slet: this
         }
     }
 }

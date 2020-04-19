@@ -31,11 +31,12 @@ buildTable = objects => {
                     document.getElementById("restaurants").style.display = "none";
                 }
 
-            } else if(key === "Rediger") {
+            } else if(key === "slet") {
                 cell = document.createElement("button");
+                //cell.setAttribute("id", object.id);
                 cell.innerHTML = key;
                 cell.onclick = ()=>{
-                    alert('Mangler implementering')
+                    alert('Restaurant er slettet');
                 }
             } else if(key === "Afmeld") {
                 cell = document.createElement("button");
