@@ -16,8 +16,9 @@ let login = () => {
     axios.post('http://localhost:4000/login', body)
         .then((response) => {
             //If the API accepts the login-credentials, we receive the status-code 200
+            //behøves denne?
+            //axios tager nemlig højde for status-koder med then og catch, da det hele er et promise
             if (response.status === 200) {
-                //behøves denne?
                 //Saves JWT as cookie
                 document.cookie = `token=${response.data.token}`;
                 alert(response.data.message);
