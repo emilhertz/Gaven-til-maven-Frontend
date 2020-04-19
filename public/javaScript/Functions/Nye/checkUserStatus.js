@@ -1,6 +1,5 @@
 //checks if user is signed in and user type
 
-let check = () => {
     //retrieves jwt
     let token = Cookies.get("token");
 
@@ -11,11 +10,10 @@ let check = () => {
     axios.get('http://localhost:4000/check', headers)
     .then((response) => {
         //logic
-
+        console.log(response)
     })
-    //prodcedure if either API is not reachable or Auth failed
-    .catch(() => {
-        alert('Auth failed');
-        document.open("homePage.html", "self");
+    //procedure if either API is not reachable or Auth failed
+    .catch((e) => {
+        alert(e.response.data.message);
+        window.open("homePage.html", "_self");
     })
-};
