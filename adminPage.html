@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Page</title>
+    <title>Administrator side</title>
     <link rel="stylesheet" href="public/css/navbar.css">
     <!--Importing JS cookie library -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <!--Importing Axios library -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="public/javaScript/Functions/Nye/login.js"></script>
-
+    <!--Checks that user is signed in -->
+    <script src="public/javaScript/Functions/Nye/checkUserStatus.js"></script>
+    <script src="public/javaScript/Functions/Nye/logout.js"></script>
 </head>
-<body onload="dynamicNavBar();">
 
+<body onload="check(true)">
 <!-- Navbar -->
 <ul>
-    <li><a href="homePage.html">Home</a></li>
-    <li id="reserve"><a href="reserve.html">Reservér</a></li>
+    <li id="reserve"><a href="restaurants.html">Restauranter</a></li>
     <li id="myRes"><a href="userReservations.html">Mine reservationer</a></li>
-    <li id="admin"><a href="adminPage.html">Mine restauranter</a></li>
-    <li id="login"><a href="login.html">Login</a></li>
-    <li id="create"><a href="newUser.html">Opret bruger</a></li>
+    <li id="admin"><a href="adminPage.html">Administrering</a></li>
     <li id="logout" onclick="logout()">Logout</li>
 </ul>
 

@@ -10,6 +10,8 @@ let login = () => {
         password: password.value
     };
 
+    //NÅR EN BRUGER DER IKKE ER ADMIN LOGGER IND, SIGER DEN AUTH SUCCES OG AUTH FAILED, MEN VIRKER ELLERS
+
     //Login request to API
     axios.post('http://localhost:4000/login', body)
         .then((response) => {
@@ -23,7 +25,9 @@ let login = () => {
                 if(response.data.isAdmin){
                     window.open("adminPage.html", "_self");
                 } else {
-                    window.open("reserve.html", "_self");
+                    window.open("restaurants.html", "_self");
+                    //hides admin page from navbar
+                    document.getElementById("admin").style.display = "none";
                 }
             }
             // Alerts the error message if API does not accept login-credentials
