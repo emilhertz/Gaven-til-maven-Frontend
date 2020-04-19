@@ -1,10 +1,6 @@
-//Dummy opening hours:
-let openingTime = "12:00";
-let closingTime = "01:00";
-let dummybruger =  new User(1,"Peter","Kanin","Rabbithole", "1234", "playboy@gmail.com");
 let br = document.createElement("br");
 
-let bookingRestaurant = restaurant =>{
+let reservationConfigurator = restaurant =>{
     // Navigates to the div where the form is made
     let bookingDiv = document.getElementById("bookingForm");
 
@@ -16,15 +12,6 @@ let bookingRestaurant = restaurant =>{
     // Turning restaurantString into a text node and appending it to the paragraph
     restaurantParagraph.appendChild(document.createTextNode(restaurantString));
     bookingDiv.appendChild(restaurantParagraph);
-
-    // CREATING PARAGRAPH ABOUT THE OPENING HOURS:
-    // Creating a new paragraph
-    let openingHoursParagraph = document.createElement("p");
-    // Creating a string for the paragraph
-    let openingHoursString = `Restauranten åbner kl. ${openingTime} og der kan sidst bestilles bord kl. ${closingTime}`;
-    // Turning openingHoursString into a text node and appending it to the paragraph
-    openingHoursParagraph.appendChild(document.createTextNode(openingHoursString));
-    bookingDiv.appendChild(openingHoursParagraph);
 
 
     // CREATING THE BACK BUTTON:
@@ -55,7 +42,7 @@ let bookingRestaurant = restaurant =>{
     pax.id = "pax";
     // Adding options that can be selected:
     // Looping the same amount of times as there are seats in the restaurant
-    for (let i=0; i<restaurant.seats; i++){
+    for (let i=0; i<10; i++){
         // Creating an option
         let seats = document.createElement("option");
         // Adding text to the option
@@ -81,6 +68,7 @@ let bookingRestaurant = restaurant =>{
     let startTime = document.createElement("input");
     startTime.type = "time";
     startTime.id = "startTime";
+    /*
     // Executes a callback function on blur
     startTime.onblur = ()=> {
         if ((closingTime > openingTime && (closingTime < startTime.value || startTime.value < openingTime)) || (closingTime < openingTime && closingTime < startTime.value && startTime.value < openingTime)){
@@ -88,6 +76,7 @@ let bookingRestaurant = restaurant =>{
             alert(`Der kan kun reserveres borde mellem kl. ${openingTime} og kl. ${closingTime}`)
         }
     };
+     */
 
 
     bookingForm.innerHTML += "Vælg tidspunkt: ";
@@ -105,11 +94,9 @@ let bookingRestaurant = restaurant =>{
     submitButton.innerHTML = "Anmod reservation";
     submitButton.onclick = (event)=>{
         event.preventDefault();
-        console.log(new Reservation(dummybruger.id,["test"], dummybruger, pax.value, comments.value));
+        storeReservation(restaurant._id, pax.value, "test", comments.value)
     };
     bookingForm.appendChild(submitButton);
-
-
 
     bookingDiv.appendChild(bookingForm);
 
