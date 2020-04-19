@@ -27,7 +27,7 @@ buildTable = objects => {
                 cell = document.createElement("button");
                 cell.innerHTML = key;
                 cell.onclick = ()=>{
-                    bookingRestaurant(object.Book);
+                    reservationConfigurator(object.Book);
                     document.getElementById("restaurants").style.display = "none";
                 }
 

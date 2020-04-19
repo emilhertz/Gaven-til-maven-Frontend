@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reservationer</title>
+    <link rel="stylesheet" href="public/css/navbar.css">
+    <title>Restauranter</title>
     <!--Importing AXIOS library -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!--Importing JS cookie library -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <!--Checks that user is signed in -->
     <script src="public/javaScript/Functions/Nye/checkUserStatus.js"></script>
-    <link rel="stylesheet" href="public/css/navbar.css">
     <script src="public/javaScript/Functions/Nye/logout.js"></script>
 </head>
 
@@ -22,11 +22,14 @@
     <li id="logout" onclick="logout()">Logout</li>
 </ul>
 
-<div id="reservations">
-    <h1>Mine reservationer</h1>
-</div>
+<h1>Restauranter</h1>
+<div id="restaurants"></div>
+<div id="bookingForm"></div>
 
 </body>
+<script src="public/javaScript/Functions/Nye/storeReservation.js"></script>
 <script src="public/javaScript/Functions/Gamle/buildTable.js"></script>
-<script src="public/javaScript/Functions/Gamle/userReservations.js"></script>
+<script src="public/javaScript/Functions/Nye/reservationConfigurator.js"></script>
+<script src="public/javaScript/Functions/Gamle/showAllRestaurants.js"></script>
+
 </html>
