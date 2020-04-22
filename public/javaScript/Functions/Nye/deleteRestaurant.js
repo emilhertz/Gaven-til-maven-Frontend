@@ -7,7 +7,8 @@ function deleteRestaurant(restaurantId) {
     axios.delete('http://localhost:4000/restaurant', {headers: {Authorization: token}, data: {restaurantId: restaurantId}})
         //waits for response from API and executes one of the following
         .then((response) => {
-            alert(response.data.message);
+            alert(response.data.message)
+            location.reload();
     })
         .catch((e)=>{
             alert(e.response.data.message)
