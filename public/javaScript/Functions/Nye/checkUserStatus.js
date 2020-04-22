@@ -1,5 +1,4 @@
 //checks if user is signed in and user type
-
 let check = (adminOnly) => {
     //retrieves jwt
     let token = Cookies.get("token");
@@ -8,7 +7,6 @@ let check = (adminOnly) => {
     let headers = {headers: {'Authorization': token}};
 
     //Makes request to API
-    //Denne her kode skal optimeres
     axios.get('http://localhost:4000/check', headers)
         .then((response) => {
             //admin check

@@ -27,8 +27,6 @@ let login = () => {
                     window.open("adminPage.html", "_self");
                 } else {
                     window.open("restaurants.html", "_self");
-                    //hides admin page from navbar
-                    document.getElementById("admin").style.display = "none";
                 }
             }
             // Alerts the error message if API does not accept login-credentials
