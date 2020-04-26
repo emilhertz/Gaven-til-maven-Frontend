@@ -23,19 +23,19 @@ buildTable = objects => {
         //runs through all the properties of the current restaurant and creates cells
         keys.forEach(function(key) {
             let cell; //Cell variable is created in the correct scope
-            if(key === "Book") {
+            if(key === "Reserver") {
                 cell = document.createElement("button");
                 cell.innerHTML = key;
                 cell.onclick = ()=>{
-                    reservationConfigurator(object.Book);
+                    reservationConfigurator(object.Reserver);
                     document.getElementById("restaurants").style.display = "none";
                 }
 
-            } else if(key === "slet") {
+            } else if(key === "Slet") {
                 cell = document.createElement("button");
                 cell.innerHTML = key;
                 cell.onclick = ()=>{
-                    deleteRestaurant(object.slet);
+                    deleteRestaurant(object.Slet);
                 }
             } else if(key === "Afmeld") {
                 cell = document.createElement("button");

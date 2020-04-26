@@ -1,6 +1,5 @@
 class Address {
-    constructor(id, streetName, streetNumber, zipCode, city, country){
-        this.id = id;
+    constructor(streetName, streetNumber, zipCode, city, country){
         this.streetName = streetName;
         this.streetNumber = streetNumber;
         this.zipCode = zipCode;
