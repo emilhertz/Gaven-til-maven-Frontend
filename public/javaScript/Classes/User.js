@@ -7,27 +7,29 @@ class User {
         this.password = password;
         this.email = email;
     }
-    logout(){
+    storeReservation(){
+
     }
-    newReservation(){
+    getReservations(){
+
     }
 }
 
 //placeret midlertidigt her grundet moduler
 class Admin extends User{
-    constructor(id, firstName, lastName, userName, password, email, restaurants){
+    constructor(id, firstName, lastName, userName, password, email){
         super(id, firstName, lastName, userName, password, email);
-        this.restaurants = [];
-        this.admin = true;
     }
-    newRestaurant(){
+    storeRestaurant(){
 
     }
+    deleteRestaurant(){
 
-    deleteUser(){
     }
+    getRestaurants(){
 
-    newReservation(){
-
+    }
+    getReservations() {
+        super.getReservations();
     }
 }
