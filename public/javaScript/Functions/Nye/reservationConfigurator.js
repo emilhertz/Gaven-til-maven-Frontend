@@ -94,7 +94,7 @@ let reservationConfigurator = restaurant =>{
     submitButton.innerHTML = "Anmod reservation";
     submitButton.onclick = (event)=>{
         event.preventDefault();
-        storeReservation(restaurant.id, pax.value, "test", comments.value)
+        storeReservation(restaurant.id, document.getElementById("pax").value, "test", comments.value)
     };
     bookingForm.appendChild(submitButton);
 
