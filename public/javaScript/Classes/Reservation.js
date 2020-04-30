@@ -1,17 +1,20 @@
 class Reservation {
-    constructor(id, timeInterval, customer, pax, comments){
-        this.id = id;
-        this.timeInterval = timeInterval;
-        this.customer = customer;
+    constructor(id, timeInterval, pax, comments, restaurant, customer){
+        this._id = id;
+        this.timeOfReservation = timeInterval;
         this.pax = pax;
-        this.comments = comments;
+        this.comment = comments;
+        this.restaurant = restaurant;
+        this.customer = customer;
     }
     //prep-methods prepares reservation objects to be displayed in tables
     tablePrepReservation(){
-        return{
-            Tidspunkt: this.timeInterval,
+        return {
+            Restaurant: this.restaurant.name,
+            Adresse: this.restaurant.address.getAddress(),
+            Tidspunkt: this.timeOfReservation,
             Antal: this.pax,
-            Kommentarer: this.comments,
+            Kommentarer: this.comment,
             Afmeld: this
         }
     };

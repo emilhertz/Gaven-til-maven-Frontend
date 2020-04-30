@@ -1,13 +1,10 @@
-function storeReservation(restaurantId, pax, timeCode, comment){
+function storeReservation(timeOfReservation, pax, comment, restaurant, customer){
 
-    const body = {
-      timeOfReservation: timeCode,
-      pax: pax,
-      comment: comment,
-      restaurantId: restaurantId
-    };
+    //id is null, because the id is given on serverside
+    let reservation = new Reservation(null, timeOfReservation, pax, comment, restaurant, customer);
 
-    axios.post('http://localhost:4000/reservation', body, {headers:{"authorization":`${Cookies.get("token")}`}})
+    //post request containing the Reservation-instance as body and a JWT authorization token in the header
+    axios.post('http://localhost:4000/reservation', reservation, {headers:{"authorization":`${Cookies.get("token")}`}})
         .then(response => {
             alert(response.data.message);
             window.open("userReservations.html", "_self");

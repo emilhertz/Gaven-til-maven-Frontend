@@ -10,24 +10,26 @@ async function storeRestaurant() {
     const country = document.getElementById("country");
     const description = document.getElementById("description");
 
-    //Defining req.body content
-    const body = {
-        name: restaurantName.value,
-        address: {
-            streetName: streetName.value,
-            streetNumber: streetNumber.value,
-            zipCode: zipCode.value,
-            city: city.value,
-            country: country.value
-        },
-        description: description.value
-    };
+    let restaurant = new Restaurant(
+        //id er null, da der tildeles et id på serverside
+        null,
+        restaurantName.value,
+        new Address(
+            streetName.value,
+            streetNumber.value,
+            zipCode.value,
+            city.value,
+            country.value
+        ),
+        description.value,
+        currentUser
+    );
 
     //new post request
-    //Contains the object "body" from above as body.
+    //Contains the restaurant instance as request body.
     //The cookie saved with the key "token" is added to header.authorization
     //written in axios syntax
-    await axios.post('http://localhost:4000/restaurant/create', body, {headers:{"authorization":`${Cookies.get("token")}`}})
+    await axios.post('http://localhost:4000/restaurant/create', restaurant, {headers:{"authorization":`${Cookies.get("token")}`}})
         .then((response) => {
             alert(response.data.message);
         })

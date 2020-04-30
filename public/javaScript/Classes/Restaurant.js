@@ -1,10 +1,11 @@
 //Restaurant-klasse
 class Restaurant{
-    constructor(id, name, address, description, openingHours) {
-        this.id = id;
+    constructor(id, name, address, description, admin) {
+        this._id = id;
         this.name = name;
         this.address = address; //klasseindstands af addresse-klassen
         this.description = description;
+        this.admin = admin
     }
     addReservation(){
         //logik
@@ -25,7 +26,7 @@ class Restaurant{
             Beskrivelse: this.description,
             Adresse: this.address.getAddress(),
             //This returns the current restaurant-instance
-            Slet: this.id
+            Slet: this
         }
     }
 }
