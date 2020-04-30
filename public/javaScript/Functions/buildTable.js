@@ -40,7 +40,9 @@ buildTable = objects => {
             } else if(key === "Afmeld") {
                 cell = document.createElement("button");
                 cell.innerHTML = key;
-                //cell.onclick = deleteReservation;
+                cell.onclick = () => {
+                    deleteReservation(object.Afmeld)
+                };
             } else {
                 cell = document.createElement("td");
                 cell.appendChild(document.createTextNode(object[key]))

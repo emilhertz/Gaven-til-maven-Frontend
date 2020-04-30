@@ -1,5 +1,5 @@
 function deleteRestaurant(restaurant) {
-    //retrieves jwt from cookie
+    //retrieves jwt from cookies
     let token = Cookies.get('token');
 
     //Sends delete requst to the endpoint below, with jwt token in the header and the restaurant id in the body

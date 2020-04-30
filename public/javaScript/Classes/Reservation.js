@@ -12,7 +12,7 @@ class Reservation {
         return {
             Restaurant: this.restaurant.name,
             Adresse: this.restaurant.address.getAddress(),
-            Tidspunkt: this.timeOfReservation,
+            Tidspunkt: new Date(Number(this.timeOfReservation)).toLocaleString(),
             Antal: this.pax,
             Kommentarer: this.comment,
             Afmeld: this

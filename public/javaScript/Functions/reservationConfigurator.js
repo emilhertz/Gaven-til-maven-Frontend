@@ -60,6 +60,7 @@ let reservationConfigurator = restaurant =>{
     //Creating date selector
     let date = document.createElement("input");
     date.type = "date";
+    date.id = "date";
     bookingForm.innerHTML += "Vælg dag: ";
     bookingForm.appendChild(date);
     bookingForm.appendChild(br.cloneNode());
@@ -94,7 +95,9 @@ let reservationConfigurator = restaurant =>{
     submitButton.innerHTML = "Anmod reservation";
     submitButton.onclick = (event)=>{
         event.preventDefault();
-        storeReservation("test", document.getElementById("pax").value, comments.value, restaurant, currentUser)
+        let date = document.getElementById("date").value;
+        let timeOfReservation = new Date(`${date}T${startTime.value}:00`).getTime();
+        storeReservation(timeOfReservation, document.getElementById("pax").value, comments.value, restaurant, currentUser)
     };
     bookingForm.appendChild(submitButton);
 
