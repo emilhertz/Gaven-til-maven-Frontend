@@ -8,7 +8,7 @@ class Restaurant{
         this.admin = admin
     }
     //prep-methods prepares restaurant objects to be displayed in tables
-    tablePrepBooking(){
+    tablePrepReserve(){
         return {
             Navn: this.name,
             Beskrivelse: this.description,

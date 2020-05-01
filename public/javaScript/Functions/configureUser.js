@@ -1,4 +1,4 @@
-async function configureUser() {
+function configureUser() {
     //Navigating to inputs and saving them to variables
     const firstName = document.getElementById("firstName");
     const lastName = document.getElementById("lastName");

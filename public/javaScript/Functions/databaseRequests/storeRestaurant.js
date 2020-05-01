@@ -12,4 +12,4 @@ let storeRestaurant = (restaurant) => {
         .catch((err) => {
             alert("Oprettelse af restaurant fejlede")
         });
-}
+};

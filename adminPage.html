@@ -10,10 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!--Checks that user is signed in -->
     <script src="public/javaScript/Classes/User.js"></script>
-    <script src="public/javaScript/Functions/checkUserStatus.js"></script>
     <script src="public/javaScript/Functions/logout.js"></script>
     <script src="public/javaScript/Classes/Address.js"></script>
     <script src="public/javaScript/Classes/Restaurant.js"></script>
+    <script src="public/javaScript/Functions/databaseRequests/getCurrentUser.js"></script>
+    <script src="public/javaScript/Functions/checkUserStatus.js"></script>
 </head>
 
 <body onload="check(true)">
@@ -49,9 +50,11 @@
 </div>
 <br>
 </body>
-<script src="public/javaScript/Functions/storeRestaurant.js"></script>
-<script src="public/javaScript/Functions/deleteRestaurant.js"></script>
-<script src="public/javaScript/Functions/buildTable.js"></script>
+
+<script src="public/javaScript/Functions/databaseRequests/getAdminRestaurants.js"></script>
+<script src="public/javaScript/Functions/databaseRequests/storeRestaurant.js"></script>
+<script src="public/javaScript/Functions/databaseRequests/deleteRestaurant.js"></script>
+<script src="public/javaScript/Functions/tools/buildTable.js"></script>
 <script src="public/javaScript/Functions/configureRestaurant.js"></script>
-<script src="public/javaScript/Functions/adminRestaurants.js"></script>
+<script src="public/javaScript/Functions/showAdminRestaurants.js"></script>
 </html>
