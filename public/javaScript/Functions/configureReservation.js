@@ -1,6 +1,6 @@
 let br = document.createElement("br");
 
-let reservationConfigurator = restaurant =>{
+let configureReservation = restaurant =>{
     // Navigates to the div where the form is made
     let bookingDiv = document.getElementById("bookingForm");
 
@@ -97,7 +97,11 @@ let reservationConfigurator = restaurant =>{
         event.preventDefault();
         let date = document.getElementById("date").value;
         let timeOfReservation = new Date(`${date}T${startTime.value}:00`).getTime();
-        storeReservation(timeOfReservation, document.getElementById("pax").value, comments.value, restaurant, currentUser)
+        //creating new reservation
+        //id is null, because the id is given on serverside
+        let reservation = new Reservation(null, timeOfReservation, document.getElementById("pax").value, comments.value, restaurant, currentUser);
+        //Storing reservation
+        storeReservation(reservation)
     };
     bookingForm.appendChild(submitButton);
 
