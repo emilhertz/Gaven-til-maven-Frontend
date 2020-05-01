@@ -7,9 +7,6 @@ class Restaurant{
         this.description = description;
         this.admin = admin
     }
-    addReservation(){
-        //logik
-    }
     //prep-methods prepares restaurant objects to be displayed in tables
     tablePrepBooking(){
         return {
