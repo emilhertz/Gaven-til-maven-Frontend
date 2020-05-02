@@ -1,14 +1,14 @@
 //checks if user is signed in and user type
 var currentUser;
 
-let check = async (adminOnly) => {
-    try{
-        currentUser = await getCurrentUser();
-        //admin check
+let checkUserStatus = async (adminOnly) => {
+    let response = await getCurrentUser();
+    //admin checkUserStatus
+    if (response.status === 200){
+        currentUser = response.data.user;
         if (adminOnly) {
             //runs if user is admin
             if (currentUser instanceof Admin) {
-                console.log('Auth');
                 //display admin page in navbar
                 document.getElementById("admin").style.display = "block";
                 //runs if user is not admin, but should be
@@ -26,11 +26,8 @@ let check = async (adminOnly) => {
                 document.getElementById("admin").style.display = "none";
             }
         }
-    }
-    catch(e){
-        alert("Auth failed");
+    } else {
+        alert(response.data.message);
         window.open("homePage.html", "_self");
     }
-    //procedure if either API is not reachable or Auth failed
-
 };
