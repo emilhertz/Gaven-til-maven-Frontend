@@ -14,6 +14,7 @@ let login = async () => {
 
     let response = await getSignedUserToken(loginCredentials);
 
+    //runs if the statuscode is positive and saves jwt to browser-cookie
     if(response.status === 200){
         document.cookie = `token=${response.data.token}`;
         alert(response.data.message);

@@ -10,7 +10,3 @@ function configureUser() {
 
     storeUser(user);
 }
-
-
-
-
