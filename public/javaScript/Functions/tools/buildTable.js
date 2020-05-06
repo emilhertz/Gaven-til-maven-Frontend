@@ -45,7 +45,7 @@ buildTable = objects => {
                 };
             } else {
                 cell = document.createElement("td");
-                cell.appendChild(document.createTextNode(object[key]))
+                cell.appendChild(document.createTextNode(object[key] === undefined ? "": object[key]))
             }
             //table cell (td) is appended to a table row
             row.appendChild(cell);
