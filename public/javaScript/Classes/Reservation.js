@@ -1,9 +1,9 @@
 class Reservation {
-    constructor(id, timeInterval, pax, comments, restaurant, customer){
+    constructor(id, timeInterval, pax, comment, restaurant, customer){
         this._id = id;
         this.timeOfReservation = timeInterval;
         this.pax = pax;
-        this.comment = comments;
+        this.comment = comment;
         this.restaurant = restaurant;
         this.customer = customer;
     }
