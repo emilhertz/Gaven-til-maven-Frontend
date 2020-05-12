@@ -1,6 +1,6 @@
 let getAllRestaurants = ()=> {
     //Sends a request to the API
-    return axios.get("http://localhost:4000/restaurant")
+    return axios.get("http://localhost:4000/restaurant", {headers:{"authorization":`${Cookies.get("token")}`}})
         //When we get the response it takes the restaurant and prints the following values
         .then(response => {
             //.map returns an array with the following values in an object for each restaurant
