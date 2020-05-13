@@ -1,6 +1,6 @@
 // Table borrowed from eloquent javaScript - Overview of the restaurants.
 
-//function which creates a html-table in which restaturants are displayed
+//function which creates a html-table in which restaturants are displayed.
 buildTable = objects => {
         let table = document.createElement("table");
         //keys which displays all of the different restaurant key's
